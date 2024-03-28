@@ -27,15 +27,15 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 apply from: 'https://sf3-fe-tos.pglstatp-toutiao.com/obj/pangle-empower/android/pangrowth_media/plugin_config.gradle'
 
 android {
-    compileSdkVersion 31
+    compileSdk 34
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 
     sourceSets {
@@ -45,18 +45,18 @@ android {
     defaultConfig {
 //        applicationId "com.example.flutter_pangrowth_example"
         applicationId "com.apkplug.gesture"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdkVersion 24
+        targetSdkVersion 33
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
 
     signingConfigs {
         config {
-            storeFile file("..\\key\\diandou.jks")
-            storePassword "@Aa123456"
-            keyAlias "diandou"
-            keyPassword "@Aa123456"
+            storeFile file("..\\key\\demo.keystore")
+            storePassword "123456"
+            keyAlias "demo"
+            keyPassword "123456"
         }
     }
 

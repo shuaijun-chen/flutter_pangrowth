@@ -6,19 +6,23 @@ import 'video/video_page.dart';
 
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: HomePage(),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -39,7 +43,7 @@ class _HomePageState extends State<HomePage> {
             MaterialButton(
               color: Colors.blue,
               textColor: Colors.white,
-              child:  Text('小说'),
+              child:  const Text('小说'),
               onPressed: () async {
                 Navigator.push(
                   context,

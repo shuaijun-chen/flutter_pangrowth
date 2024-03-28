@@ -1,3 +1,6 @@
+## 1.0.9.1
+* Android kotlin_version 升级到 1.7.21
+
 ## 1.0.9
 * ios升级3.9.0.4
 
