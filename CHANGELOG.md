@@ -1,3 +1,8 @@
+## 1.0.9+2
+* Android kotlin_version 升级到 1.5.20
+* con.android.tools:gradle 插件升级到 7.1.2
+
+
 ## 1.0.9.1
 * Android kotlin_version 升级到 1.7.21
 
