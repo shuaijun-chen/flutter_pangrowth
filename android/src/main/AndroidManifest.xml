@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.example.flutter_pangrowth">
+    package="com.example.flutter_pangrowth">
+
     <application>
         <provider
             android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
@@ -53,5 +54,15 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppFull" />
+
+        <!-- 短剧聚合展示页面 -->
+        <activity
+            android:name=".playlet.pages.PlayletDrawVideoScreenActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFull" />
+
+
     </application>
 </manifest>

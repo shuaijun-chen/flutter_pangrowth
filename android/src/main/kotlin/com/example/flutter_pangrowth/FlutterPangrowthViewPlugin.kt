@@ -35,6 +35,5 @@ object FlutterPangrowthViewPlugin {
         binding.platformViewRegistry.registerViewFactory("com.gstory.flutter_pangrowth/VideoNewsSingleCardView", VideoNewsSingleCardViewFactory(binding.binaryMessenger, activity))
         //视频卡片
         binding.platformViewRegistry.registerViewFactory("com.gstory.flutter_pangrowth/VideoCardView", VideoCardViewFactory(binding.binaryMessenger, activity))
-
     }
 }

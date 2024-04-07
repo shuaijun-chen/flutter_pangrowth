@@ -6,6 +6,45 @@ part of 'flutter_pangrowth.dart';
 /// @Description: 短剧
 
 class PangrowthPlaylet {
+  ///
+  /// # NovelSDK注册初始化,仅限于Android的注册设置
+  ///
+  /// [appName] app名字
+  ///
+  /// [andoridSiteId] andorid广告appId innerOpenAdSdk = true时必填
+  ///
+  /// [iosAppId] ios广告appId innerOpenAdSdk = true时必填
+  ///
+  /// [debug] 是否实现日志
+  ///
+  /// [mPartner] 合作方标识，必填
+  ///
+  ///  [mSecureKey] 必填
+  ///
+  ///  [mOldPartner] 通过API方式对接的合作方身份
+  ///
+  ///   [mOldUUID] 通过API方式对接时传给字节的用户身份标识
+  ///
+  static Future<bool> registerPlayletVideo({
+    required String appName,
+    required String androidAppId,
+    required String iosAppId,
+    bool? debug,
+    String? mPartner,
+    String? mSecureKey,
+    String? mOldPartner,
+    String? mOldUUID,
+  }) async {
+    return await FlutterPangrowth.pangrowthChannel.invokeMethod("registerPlayletVideo", {
+      "andoridAppId": androidAppId,
+      "iosAppId": iosAppId,
+      "debug": debug ?? false,
+      "mPartner": mPartner,
+      "mSecureKey": mSecureKey,
+      "mOldPartner": mOldPartner,
+      "mOldUUID": mOldUUID,
+    });
+  }
   ///# 打开短剧聚合页（封装方式）
   ///
   ///  - [freeCount] 免费观看的集数 默认3
