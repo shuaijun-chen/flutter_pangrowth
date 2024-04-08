@@ -337,4 +337,4 @@
 @attr/paddingStart,
 @attr/theme,
 @attr/backgroundTint,
-@attr/backgroundTintMode,"/>
+@attr/backgroundTintMode," />

@@ -30,7 +30,7 @@ class _VideoPageState extends State<VideoPage> {
 
   ///初始化
   Future<void> _register() async {
-   bool _adRegister = await FlutterUnionad.register(
+    bool _adRegister = await FlutterUnionad.register(
         androidAppId: "5240945",
         //穿山甲广告 Android appid 必填
         iosAppId: "5205916",
@@ -47,13 +47,8 @@ class _VideoPageState extends State<VideoPage> {
         //是否显示debug日志
         supportMultiProcess: true,
         //是否支持多进程，true支持 选填
-        directDownloadNetworkType: [
-          FlutterUnionadNetCode.NETWORK_STATE_2G,
-          FlutterUnionadNetCode.NETWORK_STATE_3G,
-          FlutterUnionadNetCode.NETWORK_STATE_4G,
-          FlutterUnionadNetCode.NETWORK_STATE_WIFI
-        ]); //允许直接下载的网络状态集合 选填
-   print("广告初始化结果--> $_adRegister");
+        directDownloadNetworkType: [FlutterUnionadNetCode.NETWORK_STATE_2G, FlutterUnionadNetCode.NETWORK_STATE_3G, FlutterUnionadNetCode.NETWORK_STATE_4G, FlutterUnionadNetCode.NETWORK_STATE_WIFI]); //允许直接下载的网络状态集合 选填
+    print("广告初始化结果--> $_adRegister");
     _isRegister = await PangrowthVideo.registerVideo(
       //接入小说SDK的App的英文名 必填
       appName: "appName",
@@ -109,7 +104,7 @@ class _VideoPageState extends State<VideoPage> {
               textColor: Colors.white,
               child: const Text('Flutter页面中插入视频新闻界面'),
               onPressed: () async {
-                if(Platform.isIOS){
+                if (Platform.isIOS) {
                   Navigator.push(context, MaterialPageRoute(builder: (_) {
                     return VideoInPage();
                   }));

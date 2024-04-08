@@ -16,7 +16,7 @@ object PlayletPlugin {
     /**
      * 短视频注册
      */
-    fun registerDrawVideo(context: Application?, call: MethodCall, result: MethodChannel.Result) {
+    fun registerPlayletVideo(context: Application?, call: MethodCall, result: MethodChannel.Result) {
         PlayletHolder.INSTANCE.initSDK(context!!, call, result)
     }
 
