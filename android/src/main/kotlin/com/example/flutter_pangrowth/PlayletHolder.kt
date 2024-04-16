@@ -30,14 +30,13 @@ class PlayletHolder private constructor() {
         val debug = call.argument<Boolean>("debug") as Boolean
         val config = DJXSdkConfig.Builder()
             .debug(debug)
+            // 配置青少年模式，可选
+            .privacyController(object : IDJXPrivacyController() {
+                override fun isTeenagerMode(): Boolean {
+                    return false
+                }
+            })
             .build()
-
-        // 配置青少年模式，可选
-        config.privacyController = object : IDJXPrivacyController() {
-            override fun isTeenagerMode(): Boolean {
-                return false
-            }
-        }
         //注入路由功能
         DJXSdk.init(context, "pangrowthconfig.json", config)
         Log.d("flutter_pangrowth", " --> DJXSdk.init(context, \"pangrowthconfig.json\", config) --> ok ")

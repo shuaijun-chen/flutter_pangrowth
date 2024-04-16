@@ -20,7 +20,7 @@ import com.example.flutter_pangrowth.VideoHolder
 
 class DrawVideoFullScreenActivity : AppCompatActivity() {
 
-    private val TAG = DrawVideoFullScreenActivity::class.java.simpleName
+    private val tag = DrawVideoFullScreenActivity::class.java.simpleName
 
     private var mIDPWidget: IDPWidget? = null
     private var mDrawFragment: Fragment? = null
@@ -42,46 +42,46 @@ class DrawVideoFullScreenActivity : AppCompatActivity() {
                 .hideClose(false, null)
                 .listener(object : IDPDrawListener() {
                     override fun onDPRefreshFinish() {
-                        Log.d(TAG,"onDPRefreshFinish")
+                        Log.d(tag,"onDPRefreshFinish")
                     }
 
                     override fun onDPPageChange(position: Int) {
-                        Log.d(TAG,"onDPPageChange: $position")
+                        Log.d(tag,"onDPPageChange: $position")
                     }
 
                     override fun onDPPageChange(position: Int, map: Map<String, Any>) {
                         if (map == null) {
                             return
                         }
-                        Log.d(TAG,"onDPPageChange: $position, map = $map")
+                        Log.d(tag,"onDPPageChange: $position, map = $map")
                     }
 
                     override fun onDPVideoPlay(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPVideoPlay map = $map")
+                        Log.d(tag,"onDPVideoPlay map = $map")
                     }
 
                     override fun onDPVideoOver(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPVideoOver map = $map")
+                        Log.d(tag,"onDPVideoOver map = $map")
                     }
 
                     override fun onDPVideoCompletion(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPVideoCompletion map = $map")
+                        Log.d(tag,"onDPVideoCompletion map = $map")
                     }
 
                     override fun onDPClose() {
-                        Log.d(TAG,"onDPClose")
+                        Log.d(tag,"onDPClose")
                     }
 
                     override fun onDPReportResult(isSucceed: Boolean) {
-                        Log.d(TAG,"onDPReportResult isSucceed = $isSucceed")
+                        Log.d(tag,"onDPReportResult isSucceed = $isSucceed")
                     }
 
                     override fun onDPReportResult(isSucceed: Boolean, map: Map<String, Any>) {
-                        Log.d(TAG,"onDPReportResult isSucceed = $isSucceed, map = $map")
+                        Log.d(tag,"onDPReportResult isSucceed = $isSucceed, map = $map")
                     }
 
                     override fun onDPRequestStart(@Nullable map: Map<String, Any>?) {
-                        Log.d(TAG,"onDPRequestStart")
+                        Log.d(tag,"onDPRequestStart")
                     }
 
                     override fun onDPRequestSuccess(list: List<Map<String, Any>>) {
@@ -89,80 +89,80 @@ class DrawVideoFullScreenActivity : AppCompatActivity() {
                             return
                         }
                         for (i in list.indices) {
-                            Log.d(TAG,"onDPRequestSuccess i = " + i + ", map = " + list[i].toString())
+                            Log.d(tag,"onDPRequestSuccess i = " + i + ", map = " + list[i].toString())
                         }
                     }
 
                     override fun onDPRequestFail(code: Int, msg: String, @Nullable map: Map<String, Any>?) {
                         if (map == null) {
-                            Log.d(TAG,"onDPRequestFail code = $code, msg = $msg")
+                            Log.d(tag,"onDPRequestFail code = $code, msg = $msg")
                             return
                         }
-                        Log.d(TAG,"onDPRequestFail  code = $code, msg = $msg, map = $map")
+                        Log.d(tag,"onDPRequestFail  code = $code, msg = $msg, map = $map")
                     }
 
                     override fun onDPClickAuthorName(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPClickAuthorName map = $map")
+                        Log.d(tag,"onDPClickAuthorName map = $map")
                     }
 
                     override fun onDPClickAvatar(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPClickAvatar map = $map")
+                        Log.d(tag,"onDPClickAvatar map = $map")
                     }
 
                     override fun onDPClickComment(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPClickComment map = $map")
+                        Log.d(tag,"onDPClickComment map = $map")
                     }
 
                     override fun onDPClickLike(isLike: Boolean, map: Map<String, Any>) {
-                        Log.d(TAG,"onDPClickLike isLike = $isLike, map = $map")
+                        Log.d(tag,"onDPClickLike isLike = $isLike, map = $map")
                     }
 
                     override fun onDPVideoPause(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPVideoPause map = $map")
+                        Log.d(tag,"onDPVideoPause map = $map")
                     }
 
                     override fun onDPVideoContinue(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPVideoContinue map = $map")
+                        Log.d(tag,"onDPVideoContinue map = $map")
                     }
                 }).adListener(object : IDPAdListener() {
                     override fun onDPAdRequest(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPAdRequest map =  $map")
+                        Log.d(tag,"onDPAdRequest map =  $map")
                     }
 
                     override fun onDPAdRequestSuccess(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPAdRequestSuccess map = $map")
+                        Log.d(tag,"onDPAdRequestSuccess map = $map")
                     }
 
                     override fun onDPAdRequestFail(code: Int, msg: String, map: Map<String, Any>) {
-                        Log.d(TAG,"onDPAdRequestFail map = $map")
+                        Log.d(tag,"onDPAdRequestFail map = $map")
                     }
 
                     override fun onDPAdFillFail(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPAdFillFail map = $map")
+                        Log.d(tag,"onDPAdFillFail map = $map")
                     }
 
                     override fun onDPAdShow(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPAdShow map = $map")
+                        Log.d(tag,"onDPAdShow map = $map")
                     }
 
                     override fun onDPAdPlayStart(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPAdPlayStart map = $map")
+                        Log.d(tag,"onDPAdPlayStart map = $map")
                     }
 
                     override fun onDPAdPlayPause(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPAdPlayPause map = $map")
+                        Log.d(tag,"onDPAdPlayPause map = $map")
                     }
 
                     override fun onDPAdPlayContinue(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPAdPlayContinue map = $map")
+                        Log.d(tag,"onDPAdPlayContinue map = $map")
                     }
 
                     override fun onDPAdPlayComplete(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPAdPlayComplete map = $map")
+                        Log.d(tag,"onDPAdPlayComplete map = $map")
                     }
 
                     override fun onDPAdClicked(map: Map<String, Any>) {
-                        Log.d(TAG,"onDPAdClicked map = $map")
+                        Log.d(tag,"onDPAdClicked map = $map")
                     }
                 }))
     }

@@ -24,6 +24,14 @@ object PlayletPlugin {
      * 短剧和短视频混合的页面3
      */
     fun openPlayletDrawVideoPage(activity: Activity?, call: MethodCall) {
-        activity?.startActivity(Intent(activity, PlayletDrawVideoScreenActivity::class.java))
+        val intent = Intent(activity, PlayletDrawVideoScreenActivity::class.java)
+        intent.putExtra("freeCount", (call.argument<Int>("freeCount")))
+        intent.putExtra("unlockCountUsingAD", (call.argument<Int>("unlockCountUsingAD")))
+        intent.putExtra("isShowTitle", (call.argument<Boolean>("isShowTitle")))
+        intent.putExtra("isShowBackButton", (call.argument<Boolean>("isShowBackButton")))
+        intent.putExtra("isVideoPlaylet", (call.argument<Boolean>("isVideoPlaylet")))
+        intent.putExtra("playletFreeCount", (call.argument<Int>("playletFreeCount")))
+        intent.putExtra("topSkitId", (call.argument<Int>("topSkitId")))
+        activity?.startActivity(intent)
     }
 }
