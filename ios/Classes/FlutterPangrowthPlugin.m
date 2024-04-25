@@ -45,7 +45,7 @@
     //视频 卡片
     [registrar registerViewFactory:[[VideoCardViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"com.gstory.flutter_pangrowth/VideoCardView"];
     //短剧 卡片
-    [registrar registerViewFactory:[[PlayletCardViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"com.gstory.flutter_pangrowth/PlayletCardView"];
+//    [registrar registerViewFactory:[[PlayletCardViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"com.gstory.flutter_pangrowth/PlayletCardView"];
     
 }
 
@@ -53,6 +53,7 @@
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
     //视频初始化
     if([@"registerVideo" isEqualToString:call.method]){
+        NSLog(@"===> registerVideo！%@",call.arguments);
         [VideoPlugin registerVideo:call.arguments result:result];
         //打开沉浸式小视频场景展示：全屏样式
     }else if([@"openDrawVideoFull" isEqualToString:call.method]){
@@ -73,14 +74,17 @@
     }else if([@"getFeedNativeData" isEqualToString:call.method]){
         [VideoPlugin getFeedNativeData:call.arguments result:result];
         //短剧聚合页
-    }else if([@"openPlayletAggregatePage" isEqualToString:call.method]){
+    }else if([@"openPlayletAggregatePage" isEqualToString:call.method]){ //短剧聚合页
         [PlayletPlugin openPlayletAggregatePage:call.arguments];
         //打开短剧混排
     }else if([@"openPlayletDrawVideoPage" isEqualToString:call.method]){
-        [PlayletPlugin openPlayletDrawVideoPage:call.arguments];
+//        [PlayletPlugin openPlayletDrawVideoPage:call.arguments];
         //打开短剧搜索
     }else if([@"openPlayletSearchPage" isEqualToString:call.method]){
-        [PlayletPlugin openPlayletSearchPage:call.arguments];
+//        [PlayletPlugin openPlayletSearchPage:call.arguments];
+    } else if([@"registerPlayletVideo" isEqualToString:call.method]){
+        // 短剧初始化
+        [PlayletPlugin registerPlayletVideo:call.arguments result:result];
     } else {
         result(FlutterMethodNotImplemented);
     }

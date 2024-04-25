@@ -12,22 +12,27 @@
 #import "controller/SingleFeedViewController.h"
 #import "controller/AccessUserCenterViewController.h"
 
+
 @implementation VideoPlugin
 
 # pragma mark - 初始化视频
 +(void)registerVideo:(NSDictionary *)dic result:(FlutterResult)result{
+    NSLog(@"第一次初始化注册 registerVideo ！");
     BOOL debug = [dic[@"debug"] boolValue];
     // 初始化LCDSDK
     LCDConfig *config = [LCDConfig new];
-    config.logLevel = LCDSDKLogLevelDebug;
+    config.logLevel = debug;
     // 请使用您的配置文件(例如SDK_Setting_5151488.json)初始化SDK，并确保配置文件已经作为Copy Bundle Resource引入工程
     NSString *configPath = [[NSBundle mainBundle] pathForResource:@"pangrowthconfig" ofType:@"json"];
-    [LCDManager startWithConfigPath:configPath config:config completion:^(LCDINITStatus initStatus, NSDictionary * _Nonnull userInfo) {
+    // [LCDManager startWithConfigPath:configPath config:config completion:^(LCDINITStatus initStatus, NSDictionary * _Nonnull userInfo) {
+    // [LCDManager startWithConfigPath:configPath config:config completion:^(LCDINITStatus initStatus) {
+    [LCDManager initializeWithConfigPath:configPath config:config];
+    [LCDManager startWithCompleteHandler:^(LCDINITStatus initStatus, NSDictionary * _Nonnull userInfo) {
         if (initStatus == LCDINITStatus_success) {
-            NSLog(@"初始化注册成功！");
+            NSLog(@"第一次初始化注册成功！");
             result(@YES);
         } else {
-            NSLog(@"初始化注册失败，请重新注册");
+            NSLog(@"第一次初始化注册失败，请重新注册");
             result(@NO);
         }
     }];
@@ -35,7 +40,8 @@
 
 # pragma mark - 打开沉浸式小视频场景展示：全屏样式
 +(void)openDrawVideoFull{
-    UINavigationController *viewController =[UIApplication sharedApplication].keyWindow.rootViewController;
+    NSLog(@"第二次 openDrawVideoFull ！");
+    UINavigationController  * viewController =[UIApplication sharedApplication].keyWindow.rootViewController;
     [viewController pushViewController:[[DrawVideoViewController alloc] init] animated:YES];
 }
 

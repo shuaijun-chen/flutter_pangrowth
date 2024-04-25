@@ -54,7 +54,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.pangle.cn:pangrowth-djx-sdk:1.1.5.0'
     //穿山甲广告sdk
-    compileOnly(name: 'open_ad_sdk_5.9.0.6', ext: 'aar')
+    compileOnly(name: 'open_ad_sdk_6.0.1.4', ext: 'aar')
     implementation ('com.pangle.cn:pangrowth-sdk:4.1.1.0'){
         exclude group: 'com.pangle.cn', module: 'partner-live-sdk'
         exclude group: 'com.pangle.cn', module: 'pangrowth-novel-sdk'
