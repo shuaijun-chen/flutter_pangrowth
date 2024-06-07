@@ -27,7 +27,7 @@ internal class VideoBannerView(
 ) :
         PlatformView {
 
-    private val TAG = DrawFullView::class.java.simpleName
+    private val TAG = VideoBannerView::class.java.simpleName
 
     private var mContainer: FrameLayout? = null
     private var viewWidth: Double = params["viewWidth"] as Double
