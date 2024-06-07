@@ -77,7 +77,7 @@ class _DrawVideoFullViewState extends State<DrawVideoFullView> {
     }
   }
 
-  //注册cannel
+  //注册channel
   void _registerChannel(int id) {
     _channel = MethodChannel("${_viewType}_$id");
     _channel?.setMethodCallHandler(_platformCallHandler);

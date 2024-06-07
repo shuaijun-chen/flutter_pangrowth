@@ -45,7 +45,7 @@ class _NovelPageState extends State<NovelPage> {
         //appname 必填
         allowShowNotify: true,
         //是否允许sdk展示通知栏提示 选填
-        allowShowPageWhenScreenLock: true,
+        // allowShowPageWhenScreenLock: true,
         //是否在锁屏场景支持展示广告落地页 选填
         debug: true,
         //是否显示debug日志
