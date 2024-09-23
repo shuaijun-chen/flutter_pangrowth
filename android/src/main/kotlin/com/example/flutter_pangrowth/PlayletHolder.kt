@@ -12,6 +12,7 @@ import com.bytedance.sdk.dp.DPSdkConfig
 import com.bytedance.sdk.dp.IDPPrivacyController
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
+import com.bytedance.sdk.djx.model.DJXError
 
 /**
  * 短剧处理程序
@@ -40,10 +41,16 @@ class PlayletHolder private constructor() {
         //注入路由功能
         DJXSdk.init(context, "pangrowthconfig.json", config)
         Log.d("flutter_pangrowth", " --> DJXSdk.init(context, \"pangrowthconfig.json\", config) --> ok ")
-        DJXSdk.start { isSuccess, message ->
-            Log.d("flutter_pangrowth", " --> playlet video 初始化 --> $message")
+
+        val listener = DJXSdk.StartListener() { isSuccess: Boolean, message: String, error: DJXError? ->
+            Log.d("flutter_pangrowth-PlayletHolder", " --> playlet video 初始化 --> $message")
+            // callback?.invoke(isSuccess)
             result.success(isSuccess)
+            if (!isSuccess) {
+                Log.d("flutter_pangrowth-PlayletHolder", " --> playlet video 初始化 --> ${error?.msg}")
+            }
         }
+        DJXSdk.start(listener)
     }
 
     private fun getFactory(): IDJXWidgetFactory {

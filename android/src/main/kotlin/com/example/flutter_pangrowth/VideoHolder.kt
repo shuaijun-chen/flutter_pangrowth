@@ -5,6 +5,8 @@ import android.util.Log
 import com.bytedance.sdk.dp.*
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
+import com.bytedance.sdk.djx.model.DJXError
+import com.bytedance.sdk.djx.DJXSdk
 
 class VideoHolder private constructor() {
     companion object {

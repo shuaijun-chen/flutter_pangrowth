@@ -3,6 +3,7 @@ package com.example.flutter_pangrowth.utils
 import android.app.Application
 import android.util.Log
 import android.widget.Toast
+import com.bytedance.sdk.djx.model.DJXError
 import com.bytedance.sdk.djx.DJXSdk
 import com.bytedance.sdk.djx.DJXSdkConfig
 import com.bytedance.sdk.djx.IDJXPrivacyController
@@ -45,18 +46,25 @@ object DJXHolder {
 
         // 配置隐私控制开关，可选
         //config.privacyController()
-
         //注入路由功能
         // config.router = DJXRouterImpl()
 
         DJXSdk.init(application, "pangrowthconfig.json", config)
-        DJXSdk.start { isSuccess, message ->
-            Log.d(TAG, "doInitTask: $isSuccess, $message")
+        //DJXSdk.start { isSuccess, message ->
+        //    Log.d(TAG, "doInitTask: $isSuccess, $message")
+        //    callback?.invoke(isSuccess)
+        //
+        //    val msg = if (isSuccess) "初始化成功" else "初始化失败：$message"
+        //    Toast.makeText(application, msg, Toast.LENGTH_LONG).show()
+        //}
+        val listener = DJXSdk.StartListener() { isSuccess: Boolean, message: String, error: DJXError? ->
+            Log.d("flutter_pangrowth", " --> playlet video 初始化 --> $message")
             callback?.invoke(isSuccess)
-
-            val msg = if (isSuccess) "初始化成功" else "初始化失败：$message"
-            Toast.makeText(application, msg, Toast.LENGTH_LONG).show()
+            if (!isSuccess) {
+                Log.d("flutter_pangrowth", " --> playlet video 初始化 --> ${error?.msg}")
+            }
         }
+        DJXSdk.start(listener)
     }
 
     //加载短剧
