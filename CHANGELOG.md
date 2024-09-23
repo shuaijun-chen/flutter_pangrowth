@@ -1,47 +1,64 @@
+## 1.1.0+3
+
+* 升级了 open_ad_sdk_6.4.0.9
+* com.pangle.cn:pangrowth-sdk:4.1.1.0
+
 ## 1.0.9+2
+
 * Android kotlin_version 升级到 1.5.20
 * con.android.tools:gradle 插件升级到 7.1.2
 
-
 ## 1.0.9.1
+
 * Android kotlin_version 升级到 1.7.21
 
 ## 1.0.9
+
 * ios升级3.9.0.4
 
 ## 1.0.8
+
 * android升级3.9.0.2
 * ios升级3.9.0.2
 * 由于官方下线小说功能，插件移除小说相关功能
 * ios新增短剧功能
 
 ## 1.0.7
+
 * android升级3.9.0.1
 * ios升级3.9.0.1
 
 ## 1.0.6
+
 * android升级2.7.0.5
 * ios升级2.7.0.0
 * 兼容新版穿山甲广告
 
 ## 1.0.5
+
 * 兼容Flutter3.0
 * android升级2.4.0.0
 * ios升级2.4.0.0
 
 ## 1.0.4
+
 * android升级2.2.0.1
 * 该版本必须配合flutter_unionad 1.2.4版本使用
+
 ```dart
-  flutter_unionad: 1.2.4
+  flutter_unionad: 1.2
+.4
 ```
 
 ## 1.0.3
+
 * android升级2.2.0.0
 * ios升级2.2.0.0
 * 该版本必须配合flutter_unionad 1.2.4版本使用
+
 ```dart
-  flutter_unionad: 1.2.4
+  flutter_unionad: 1.2
+.4
 ```
 
 ## 1.0.2
@@ -51,8 +68,10 @@
 * 新增视频个人主页跳转
 * 新增ios视频页面 手势侧滑退出
 * 该版本必须配合flutter_unionad 1.2.1版本使用
+
 ```dart
-  flutter_unionad: 1.2.1
+  flutter_unionad: 1.2
+.1
 ```
 
 ## 1.0.1
