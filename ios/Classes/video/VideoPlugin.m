@@ -42,6 +42,7 @@
 +(void)openDrawVideoFull{
     NSLog(@"第二次 openDrawVideoFull ！");
     UINavigationController  * viewController =[UIApplication sharedApplication].keyWindow.rootViewController;
+    
     [viewController pushViewController:[[DrawVideoViewController alloc] init] animated:YES];
 }
 

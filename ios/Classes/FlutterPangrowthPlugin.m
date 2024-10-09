@@ -76,12 +76,12 @@
         //短剧聚合页
     }else if([@"openPlayletAggregatePage" isEqualToString:call.method]){ //短剧聚合页
         [PlayletPlugin openPlayletAggregatePage:call.arguments];
-        //打开短剧混排
+        //打开短剧混排 -0
     }else if([@"openPlayletDrawVideoPage" isEqualToString:call.method]){
-//        [PlayletPlugin openPlayletDrawVideoPage:call.arguments];
+        //[PlayletPlugin openPlayletDrawVideoPage:call.arguments];
         //打开短剧搜索
     }else if([@"openPlayletSearchPage" isEqualToString:call.method]){
-//        [PlayletPlugin openPlayletSearchPage:call.arguments];
+        //[PlayletPlugin openPlayletSearchPage:call.arguments];
     } else if([@"registerPlayletVideo" isEqualToString:call.method]){
         // 短剧初始化
         [PlayletPlugin registerPlayletVideo:call.arguments result:result];

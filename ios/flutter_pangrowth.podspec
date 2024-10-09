@@ -17,13 +17,11 @@ A new flutter plugin project.
   s.static_framework = true
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.platform = :ios, '9.0'
+  s.platform = :ios, '12.0'
   s.dependency 'MJExtension','~> 3.4.0'
-  s.dependency 'Pangrowth/media','~> 4.3.0.0'
-  s.dependency 'DJXSDK/shortplay-lite','~> 1.1.8.4'
- # s.dependency 'Pangrowth/novel','~> 3.9.0.1'
-  
+  s.dependency 'Pangrowth/media','~> 5.0.0.0'
+  s.dependency 'DJXSDK/shortplay-lite','~> 1.1.8.0'
+
   # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
-#  s.swift_version = '5.0'
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
 end
